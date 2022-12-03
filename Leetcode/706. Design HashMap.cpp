@@ -1,16 +1,29 @@
 class MyHashMap {
 public:
-    int data[1000001];
+    int v[1000001];
     MyHashMap() {
-        fill(data, data + 1000000, -1);
+        fill_n(v, 1000001, -1);        
+        // fill(v, v+1000001, -1);
+
     }
-    void put(int key, int val) {
-        data[key] = val;
+    
+    void put(int key, int value) {
+        v[key] = value;
     }
+    
     int get(int key) {
-        return data[key];
+        return v[key];
     }
+    
     void remove(int key) {
-        data[key] = -1;
+        v[key] = -1;
     }
 };
+
+/**
+ * Your MyHashMap object will be instantiated and called as such:
+ * MyHashMap* obj = new MyHashMap();
+ * obj->put(key,value);
+ * int param_2 = obj->get(key);
+ * obj->remove(key);
+ */
